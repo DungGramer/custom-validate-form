@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <section class="left d-flex f-d-column">
+        <div class="logo"></div>
+        <div class="container d-flex f-d-column f-center-center">
+          <h1 class="heading t-center">Welcome!</h1>
+          <p class="t-center">Sign in by entering the information below</p>
+
+          <form
+            class="login-form d-flex f-d-column f-center-center"
+            action="a.html"
+            method="post"
+          >
+            <section class="input input__email" data-error>
+              <div class="input__wrapper">
+                <input
+                  type="text"
+                  name="email"
+                  id="email"
+                  inputmode="email"
+                  autocomplete="email"
+                  placeholder=" "
+                />
+                <label class="input__label" for="email"
+                  >Your Email address</label
+                >
+              </div>
+            </section>
+
+            <section class="input input__password" data-error>
+              <div class="input__wrapper">
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  autocomplete="current-password"
+                  placeholder=" "
+                />
+                <label class="input__label" for="password">Password</label>
+              </div>
+            </section>
+
+            <section class="footer d-flex f-space-between">
+              <div class="checkbox">
+                <input type="checkbox" name="remember" id="remember" />
+                <label for="remember">Remember Me</label>
+              </div>
+              <a href="#" class="forgot-password">Forgot Password</a>
+            </section>
+
+            <button type="button" class="btn-login">Sign in</button>
+          </form>
+          <a href="#" class="t-center">Don't have account? Create one here.</a>
+        </div>
+        <div class="copyright">© 2021 DungGramer</div>
+      </section>
+      <section class="right">
+        <img
+          src="https://images.unsplash.com/photo-1444824350087-2460ceb43eef"
+          alt=""
+        />
+      </section>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
