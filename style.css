@@ -1,4 +1,3 @@
-
 /**
  * CONTENTS
  *
@@ -20,7 +19,6 @@
  * Copyright
  */
 
-
 /*------------------------------------*
   #Global
 *------------------------------------*/
@@ -37,36 +35,46 @@
   --status: #f3f4f6;
   --border: rgba(0, 0, 0, 0.5);
 
-  --primary: #3c9898;
-  --primary-visited: #235959;
-  --primary-hover: #41a6a6;
-  --primary-active: #328080;
+  --primary: hsl(180, 43%, 42%);
+  --primary-visited: hsl(180, 44%, 24%);
+  --primary-hover: hsl(180, 44%, 45%);
+  --primary-active: hsl(180, 44%, 35%);
 }
 
 html {
   font: 62.5%/1.618 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  box-sizing: border-box;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    text-rendering: optimizeSpeed;
+  }
+}
+
+* {
+  border: 0;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+*:focus-visible {
+  outline-color: var(--primary-visited);
 }
 
 button {
   font: inherit;
 }
 
-html,
-body,
-p,
-h1 {
-  margin: 0;
-  padding: 0;
-}
-
 body,
 input {
   font-size: 1.6rem;
-}
-
-*:focus-visible {
-  outline-color: var(--primary-visited);
 }
 
 a {
@@ -121,8 +129,6 @@ a:active {
   margin-bottom: 1rem;
 }
 
-
-
 /*------------------------------------*
   #Layout
 *------------------------------------*/
@@ -152,9 +158,6 @@ a:active {
   object-fit: cover;
 }
 
-
-
-
 /*------------------------------------*
   # Input Wrapper
 *------------------------------------*/
@@ -176,15 +179,16 @@ a:active {
 .input__label {
   color: var(--status);
   pointer-events: none;
-
   position: absolute;
   left: 0;
   top: 0;
-
-  transition: all 0.3s ease;
+  will-change: all;
+  transition: all 0.25s ease;
+  -webkit-transition: all 0.25s ease;
+  -moz-transition: all 0.25s ease;
+  -ms-transition: all 0.25s ease;
+  -o-transition: all 0.25s ease;
 }
-
-
 
 /*------------------------------------*
   #Input
@@ -193,12 +197,9 @@ a:active {
 .input__wrapper input {
   border: 0;
   width: 100%;
-
   border-bottom: thin solid var(--status);
   outline: none;
   padding-bottom: 5px;
-
-  transition: all 0.25s ease;
 }
 
 /* Disable color autofill */
@@ -227,9 +228,28 @@ a:active {
 .input__wrapper input:active + .input__label,
 .input__wrapper input:focus + .input__label,
 .input__wrapper input:not(:placeholder-shown) + .input__label {
-  transform: translateY(-100%);
   font-size: 1.2rem;
   font-weight: bold;
+
+  -webkit-font-smoothing: antialiased;
+  will-change: transform;
+  transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  -o-transform: translateY(-100%);
+}
+
+/* Disable animation when motion reduce */
+@media (prefers-reduced-motion: reduce) {
+  .input__wrapper input,
+  .input__label {
+    transition: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    -ms-transition: none;
+    -o-transition: none;
+  }
 }
 
 /*------------------------------------*
@@ -265,9 +285,6 @@ a:active {
 .input:not([data-error='']) {
   --status: var(--error);
 }
-
-
-
 
 /*------------------------------------*
   #Checkbox
@@ -307,9 +324,6 @@ input[type='checkbox']:checked::after {
   font-size: 1rem;
 }
 
-
-
-
 /*------------------------------------*
   #Login Button
 *------------------------------------*/
@@ -339,9 +353,6 @@ input[type='checkbox']:checked::after {
   background-color: var(--primary-active);
 }
 
-
-
-
 /*------------------------------------*
   #Copyright
 *------------------------------------*/
@@ -350,16 +361,11 @@ input[type='checkbox']:checked::after {
   margin-bottom: 25px;
 }
 
-
-
-
-
 /*------------------------------------*
-  #Responsive
+  #Responsive Layout
 *------------------------------------*/
 
 @media not print {
-
   /* Small - 480px */
   @media (min-width: 30em) {
     .left .container {
@@ -387,5 +393,3 @@ input[type='checkbox']:checked::after {
     display: block;
   }
 }
-
-
