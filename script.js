@@ -16,7 +16,7 @@ let btnSubmit = document.querySelector('.btn-login');
  * @return {boolean}
  */
 function isEmpty(input) {
-  return !input.length ? true : false;
+  return !input.length;
 }
 
 /**
@@ -27,7 +27,7 @@ function isEmpty(input) {
  * @return {boolean}
  */
 function isSpace(input) {
-  return input !== input.trim() ? true : false;
+  return input !== input.trim();
 }
 
 /**
@@ -41,7 +41,7 @@ function isEmail(email) {
   let emailRegex = new RegExp(
     /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/i
   );
-  return !emailRegex.test(email) ? true : false;
+  return emailRegex.test(email);
 }
 
 /**
@@ -66,7 +66,7 @@ function invalidLength(input, type) {
  * @return {boolean}
  */
 function isLogin(email, password) {
-  return email === 'admin@gmail.com' && password === 'admin' ? true : false;
+  return email === 'admin@gmail.com' && password === 'admin';
 }
 
 /**
