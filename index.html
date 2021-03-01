@@ -1,76 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="wrapper">
-      <section class="left d-flex f-d-column">
-        <div class="logo"></div>
-        <div class="container d-flex f-d-column f-center-center">
-          <h1 class="heading t-center">Welcome!</h1>
-          <p class="t-center">Sign in by entering the information below</p>
 
-          <form
-            class="login-form d-flex f-d-column f-center-center"
-            action="a.html"
-            method="post"
-          >
-            <section class="input input__email" data-error>
-              <div class="input__wrapper">
-                <input
-                  type="text"
-                  name="email"
-                  id="email"
-                  inputmode="email"
-                  autocomplete="email"
-                  placeholder=" "
-                />
-                <label class="input__label" for="email"
-                  >Your Email address</label
-                >
-              </div>
-            </section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-            <section class="input input__password" data-error>
-              <div class="input__wrapper">
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  autocomplete="current-password"
-                  placeholder=" "
-                />
-                <label class="input__label" for="password">Password</label>
-              </div>
-            </section>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 
-            <section class="footer d-flex f-space-between">
-              <div class="checkbox">
-                <input type="checkbox" name="remember" id="remember" />
-                <label for="remember">Remember Me</label>
-              </div>
-              <a href="#" class="forgot-password">Forgot Password</a>
-            </section>
+  <!-- IE know HTML5 Tag -->
 
-            <button type="button" class="btn-login">Sign in</button>
-          </form>
-          <a href="#" class="t-center">Don't have account? Create one here.</a>
-        </div>
-        <div class="copyright">© 2021 DungGramer</div>
-      </section>
-      <section class="right">
-        <img
-          src="https://images.unsplash.com/photo-1444824350087-2460ceb43eef"
-          alt=""
-        />
-      </section>
-    </div>
-    <script src="script.js"></script>
-  </body>
+  <!--[if IE]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" integrity="sha512-UDJtJXfzfsiPPgnI5S1000FPLBHMhvzAMX15I+qG2E2OAzC9P1JzUwJOfnypXiOH7MRPaqzhPbBGDNNj7zBfoA==" crossorigin="anonymous"></script>
+  <![endif]-->
+
+  <!-- IE know Grid -->
+  <!--[if lte IE 9]>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js" integrity="sha512-qWVvreMuH9i0DrugcOtifxdtZVBBL0X75r9YweXsdCHtXUidlctw7NXg5KVP3ITPtqZ2S575A0wFkvgS2anqSA==" crossorigin="anonymous"></script>
+  <![endif]-->
+
+  <!-- SEO -->
+  <!-- Primary Meta Tags -->
+  <title>Login form</title>
+  <meta name="title" content="Login form" />
+  <meta name="description" content="Custom validate form" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://github.com/DungGramer/custom-validate-form" />
+  <meta property="article:author" content="DungGramer" />
+  <meta property="og:title" content="Login form" />
+  <meta property="og:description" content="Custom validate form" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1444824350087-2460ceb43eef" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta name="twitter:creator" content="@DungGramer" />
+  <meta property="twitter:url" content="https://github.com/DungGramer/custom-validate-form" />
+  <meta property="twitter:title" content="Login form" />
+  <meta property="twitter:description" content="Custom validate form" />
+  <meta property="twitter:image" content="https://images.unsplash.com/photo-1444824350087-2460ceb43eef" />
+
+  <!-- Custom -->
+  <meta name="theme-color" content="#3c9898" />
+  <link rel="me" href="https://www.facebook.com/dung.dev.gramer/" type="text/html" />
+  <link rel="me" href="mailto:dung.dev.gramer.com" />
+  <link rel="me" href="sms:+84334565999" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="renderer" content="webkit|ie-comp|ie-stand" />
+</head>
+
+<body>
+  <div class="wrapper">
+    <section class="left d-flex f-d-column">
+      <div class="logo"></div>
+      <div class="container d-flex f-d-column f-center-center">
+        <h1 class="heading t-center">Welcome!</h1>
+        <p class="t-center">Sign in by entering the information below</p>
+
+        <form class="login-form d-flex f-d-column f-center-center"
+          action="https://formspree.io/f/meqpnldz?fbclid=IwAR3bA2etYwekodneIPoxC_FQq_GRVkHpUI6-Owi5GNSk69PuCkS_DJoAhdM"
+          method="post">
+          <section class="input input__email" data-error>
+            <div class="input__wrapper">
+              <input type="text" name="email" id="email" inputmode="email" autocomplete="email" placeholder=" " />
+              <label class="input__label" for="email">Your Email address</label>
+            </div>
+          </section>
+
+          <section class="input input__password" data-error>
+            <div class="input__wrapper">
+              <input type="password" name="password" id="password" autocomplete="current-password" placeholder=" " />
+              <label class="input__label" for="password">Password</label>
+            </div>
+          </section>
+
+          <section class="footer d-flex f-space-between">
+            <div class="checkbox">
+              <input type="checkbox" name="remember" id="remember" />
+              <label for="remember">Remember Me</label>
+            </div>
+            <a href="#" class="forgot-password">Forgot Password</a>
+          </section>
+
+          <button type="button" class="btn-login">Sign in</button>
+        </form>
+
+        <a href="#" class="t-center">Don't have account? Create one here.</a>
+      </div>
+      <div class="copyright">© 2021 DungGramer</div>
+    </section>
+    <section class="right">
+      <img src="https://images.unsplash.com/photo-1444824350087-2460ceb43eef" alt="" />
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+
 </html>
